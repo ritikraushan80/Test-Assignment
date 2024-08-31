@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/screen_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.CharacterDetailsFragment">
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        style="@style/toolbar_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/back_btn"
+            style="@style/icon_tint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:paddingStart="2dp"
+            android:paddingEnd="15dp"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            style="@style/text_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Character Details"
+            android:textSize="18sp" />
+
+
+    </Toolbar>
+
+    <ProgressBar
+        android:id="@+id/loader"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:indeterminateDrawable="@drawable/progress_loader"
+        android:paddingVertical="12dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/img_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/characterImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:scaleType="fitXY" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/name_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="24sp"
+                android:text="Morty"
+                android:layout_marginStart="15dp"
+                app:layout_constraintTop_toBottomOf="@+id/img_card"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/status"
+                style="@style/text_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/status"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/name_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/name_text_view" />
+
+            <TextView
+                android:id="@+id/status_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/poppins_reg"
+                android:text="Alive"
+                android:textSize="16sp"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="@+id/status"
+                app:layout_constraintEnd_toEndOf="@+id/img_card"
+                app:layout_constraintStart_toEndOf="@+id/status"
+                app:layout_constraintTop_toTopOf="@+id/status" />
+
+            <TextView
+                android:id="@+id/species"
+                style="@style/text_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/species"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/status"
+                app:layout_constraintTop_toBottomOf="@+id/status" />
+
+            <TextView
+                android:id="@+id/species_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_reg"
+                android:text="Human"
+                android:textSize="16sp"
+                android:layout_marginStart="5dp"
+                android:gravity="end"
+                app:layout_constraintEnd_toEndOf="@+id/status_text_view"
+                app:layout_constraintStart_toEndOf="@+id/species"
+                app:layout_constraintTop_toTopOf="@+id/species" />
+
+            <TextView
+                android:id="@+id/gender"
+                style="@style/text_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/gender"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/species"
+                app:layout_constraintTop_toBottomOf="@+id/species" />
+
+            <TextView
+                android:id="@+id/gender_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginStart="5dp"
+                android:gravity="end"
+                android:text="Male"
+                android:fontFamily="@font/poppins_reg"
+                app:layout_constraintEnd_toEndOf="@+id/status_text_view"
+                app:layout_constraintStart_toEndOf="@+id/gender"
+                app:layout_constraintTop_toTopOf="@+id/gender" />
+
+
+            <TextView
+                android:id="@+id/location"
+                style="@style/text_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/location"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/gender"
+                app:layout_constraintTop_toBottomOf="@+id/gender" />
+
+            <TextView
+                android:id="@+id/location_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginStart="5dp"
+                android:gravity="end"
+                android:text="Citadel of Ricks"
+                android:fontFamily="@font/poppins_reg"
+                app:layout_constraintEnd_toEndOf="@+id/status_text_view"
+                app:layout_constraintStart_toEndOf="@+id/location"
+                app:layout_constraintTop_toTopOf="@+id/location" />
+
+            <View
+                android:id="@+id/div_1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#BFBFBF"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/episode"
+                style="@style/text_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Episodes :-"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/location"
+                app:layout_constraintTop_toBottomOf="@+id/div_1" />
+
+            <View
+                android:id="@+id/div_2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#BFBFBF"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/episode"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/episode_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/episode_item"
+                android:paddingBottom="70dp"
+                app:layout_constraintTop_toBottomOf="@+id/div_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

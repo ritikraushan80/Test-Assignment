@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PW Rick App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="physics_wallah">Physics Wallah</string>
+    <string name="episode">Episode</string>
+    <string name="status">Status:</string>
+    <string name="species">Species: </string>
+    <string name="gender">Gender:</string>
+    <string name="location">Location:</string>
+</resources>

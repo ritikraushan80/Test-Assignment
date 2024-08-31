@@ -1,0 +1,35 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PWRickApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="Theme.PWRickApp" parent="Base.Theme.PWRickApp" />
+
+    <style name="screen_background">
+        <item name="android:background">@color/white_200</item>
+    </style>
+
+    <style name="toolbar_background">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="text_color">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="icon_tint">
+        <item name="tint">@color/black</item>
+    </style>
+
+    <style name="card_background">
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="background">@color/white</item>
+    </style>
+
+    <style name="circle_image">
+        <item name="cornerSize">10dp</item>
+    </style>
+</resources>
